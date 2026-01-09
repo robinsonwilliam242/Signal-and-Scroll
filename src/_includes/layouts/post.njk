@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="card article">
+  <div class="meta">
+    <span class="tag {% if type == 'Op-ed' %}accent{% endif %}{% if type == 'Analysis' %}cyan{% endif %}">{{ type }}</span>
+    <span>•</span>
+    <span>{{ readingTime }}</span>
+    <span>•</span>
+    <span>{{ author }}</span>
+    <span>•</span>
+    <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+    <span>•</span>
+    <a class="tag" href="/topics/{{ topic }}/">Topic</a>
+  </div>
+
+  <h1>{{ title }}</h1>
+  <p class="deck">{{ excerpt }}</p>
+
+  <div class="content">
+    {{ content | safe }}
+  </div>
+
+  <div class="hr"></div>
+
+  <div class="mini">
+    <h3>Get The Sunday Signal</h3>
+    <p>One email a week with our best writing and the internet story you’ll hear about tomorrow.</p>
+    <div class="hero-actions" style="margin-top:10px">
+      <a class="btn" href="/newsletter/">Subscribe</a>
+      <a class="btn secondary" href="/topics/">Browse topics</a>
+    </div>
+  </div>
+</article>

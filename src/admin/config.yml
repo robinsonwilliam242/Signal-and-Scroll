@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: ""
+display_url: ""
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Type", name: "type", widget: "select", options: ["Essay","Op-ed","Analysis","Reporting"] }
+      - { label: "Topic", name: "topic", widget: "select", options: ["platform-power","creator-economy","trends-aesthetics","digital-identity","money-online","ai-culture"] }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Reading Time", name: "readingTime", widget: "string", default: "6 min" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Keywords", name: "keywords", widget: "list", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Platform Power",
+    "slug": "platform-power",
+    "desc": "Moderation, policy shifts, shadowbans, and how platforms decide what counts as \u201cgood.\u201d"
+  },
+  {
+    "name": "Creator Economy",
+    "slug": "creator-economy",
+    "desc": "Sponsorships, burnout, audience capture, and the business models behind online fame."
+  },
+  {
+    "name": "Trends & Aesthetics",
+    "slug": "trends-aesthetics",
+    "desc": "Why things go viral, how aesthetics spread, and what trends reveal about status and identity."
+  },
+  {
+    "name": "Digital Identity",
+    "slug": "digital-identity",
+    "desc": "Selfhood, parasocial dynamics, the attention economy, and the pressures of being online."
+  },
+  {
+    "name": "Money on the Internet",
+    "slug": "money-online",
+    "desc": "Scams, side hustles, dropshipping, and how people learn value online."
+  },
+  {
+    "name": "AI & Culture",
+    "slug": "ai-culture",
+    "desc": "How generative tools reshape creativity, labor, education, and the definition of \u201creal.\u201d"
+  }
+]

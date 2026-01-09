@@ -1,0 +1,164 @@
+:root{
+  --bg:#070A0F;
+  --panel:#0D1220;
+  --text:#EAF0FA;
+  --muted:#A5B2C6;
+  --line:#1D2A40;
+  --accent:#7C5CFF;
+  --accent2:#22D3EE;
+  --good:#34D399;
+  --warn:#FBBF24;
+  --bad:#FB7185;
+  --radius:18px;
+  --shadow: 0 14px 40px rgba(0,0,0,.45);
+  --max: 1120px;
+  --serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--text);
+  background:
+    radial-gradient(1100px 520px at 15% -10%, rgba(124,92,255,.30), transparent 60%),
+    radial-gradient(950px 460px at 85% 0%, rgba(34,211,238,.18), transparent 55%),
+    radial-gradient(900px 650px at 60% 120%, rgba(52,211,153,.10), transparent 55%),
+    var(--bg);
+  line-height:1.55;
+}
+a{color:inherit; text-decoration:none}
+a:hover{opacity:.93}
+.wrap{max-width:var(--max); margin:0 auto; padding:24px}
+.nav{
+  position:sticky; top:0; z-index:50;
+  background: rgba(7,10,15,.70);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(29,42,64,.65);
+}
+.nav .row{display:flex; align-items:center; justify-content:space-between; gap:16px}
+.brand{display:flex; align-items:center; gap:12px}
+.logo{
+  width:38px; height:38px; border-radius:12px;
+  background: linear-gradient(135deg, rgba(124,92,255,1), rgba(34,211,238,1));
+  box-shadow: 0 14px 30px rgba(124,92,255,.22);
+  position:relative;
+}
+.logo:after{
+  content:"";
+  position:absolute; inset:9px;
+  border-radius:10px;
+  background: rgba(7,10,15,.45);
+  border:1px solid rgba(255,255,255,.14);
+}
+.brand h1{font-size:14px; margin:0; letter-spacing:.2px}
+.brand p{margin:0; font-size:12px; color:var(--muted)}
+.navlinks{display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.navlinks a{font-size:13px; color:var(--muted)}
+.navlinks a.active{color:var(--text)}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:10px 14px; border-radius:12px;
+  border:1px solid rgba(124,92,255,.45);
+  background: rgba(124,92,255,.12);
+  color:var(--text);
+  font-size:13px;
+  cursor:pointer;
+  transition: transform .08s ease, border-color .12s ease;
+  user-select:none;
+}
+.btn:hover{transform: translateY(-1px); border-color: rgba(124,92,255,.70)}
+.btn.secondary{
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.04);
+}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.kicker{
+  display:inline-flex; gap:10px; align-items:center;
+  font-size:12px; color:var(--muted);
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(13,18,32,.55);
+  padding:8px 12px;
+  border-radius:999px;
+  width:fit-content;
+}
+.dot{width:8px; height:8px; border-radius:999px; background:var(--accent2)}
+.hero{padding:38px 0 18px}
+.hero-grid{display:grid; grid-template-columns: 1.25fr .75fr; gap:18px}
+.hero-card{padding:26px}
+.hero h2{margin:14px 0 10px; font-size:42px; line-height:1.06; letter-spacing:-.7px}
+.hero h2 span{background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.hero p{margin:0; color:var(--muted); font-size:15px; max-width:60ch}
+.hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+.side{padding:18px; display:flex; flex-direction:column; gap:12px}
+.mini{padding:14px; border-radius:16px; border:1px solid rgba(255,255,255,.10); background: rgba(13,18,32,.55)}
+.mini h3{margin:0 0 6px; font-size:13px}
+.mini p{margin:0; font-size:12px; color:var(--muted)}
+section{padding:18px 0}
+.section-title{display:flex; align-items:end; justify-content:space-between; gap:16px; margin:10px 0 12px}
+.section-title h3{margin:0; font-size:15px}
+.section-title p{margin:0; font-size:12px; color:var(--muted)}
+.grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:14px}
+.post{grid-column: span 6; padding:18px}
+.meta{display:flex; gap:10px; flex-wrap:wrap; align-items:center; color:var(--muted); font-size:12px}
+.tag{padding:4px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03)}
+.tag.accent{border-color: rgba(124,92,255,.45); background: rgba(124,92,255,.12)}
+.tag.cyan{border-color: rgba(34,211,238,.35); background: rgba(34,211,238,.10)}
+.post h4{margin:10px 0 8px; font-family:var(--serif); font-weight:650; font-size:20px; letter-spacing:-.2px}
+.post p{margin:0; color:var(--muted); font-size:13px}
+.wide{grid-column: span 12; display:grid; grid-template-columns: 1.3fr .7fr; gap:14px; padding:18px}
+input, textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(7,10,15,.35);
+  color:var(--text);
+  outline:none;
+  font-family:inherit;
+}
+textarea{min-height:140px; resize:vertical}
+input::placeholder, textarea::placeholder{color: rgba(165,178,198,.78)}
+.hint{font-size:12px; color:var(--muted); margin-top:8px}
+.hr{height:1px; background:rgba(29,42,64,.70); margin:16px 0}
+.article{
+  padding:22px;
+}
+.article h1{
+  margin:10px 0 8px;
+  font-family:var(--serif);
+  font-size:40px;
+  line-height:1.08;
+  letter-spacing:-.6px;
+}
+.article .deck{color:var(--muted); font-size:15px; margin:0 0 14px; max-width:75ch}
+.article .content{
+  color: rgba(233,240,250,.92);
+  font-size:16px;
+  max-width: 75ch;
+}
+.article .content h2{
+  font-family:var(--serif);
+  margin:24px 0 10px;
+  font-size:24px;
+}
+.article .content p{margin:0 0 14px}
+.footer{padding:22px 0 40px; color:var(--muted); font-size:12px}
+.footergrid{display:grid; grid-template-columns:1.2fr .8fr; gap:14px}
+.footlinks{display:flex; gap:12px; flex-wrap:wrap}
+.footlinks a{color:var(--muted)}
+@media (max-width: 920px){
+  .hero-grid{grid-template-columns:1fr}
+  .post{grid-column: span 12}
+  .wide{grid-template-columns:1fr}
+  .footergrid{grid-template-columns:1fr}
+  .hero h2{font-size:34px}
+  .article h1{font-size:32px}
+}

@@ -1,0 +1,94 @@
+---
+layout: layouts/base.njk
+title:
+description: "Essays, op-eds, and reporting on internet culture, digital identity, and the creator economy."
+---
+
+<div class="hero">
+  <div class="hero-grid">
+    <div class="card hero-card">
+      <div class="kicker"><span class="dot"></span> A home for thoughtful takes on digital life</div>
+      <h2>Make sense of the <span>internet</span> you live in.</h2>
+      <p>
+        {{ site.title }} publishes essays, op-eds, and reporting on internet culture — from algorithms and aesthetics
+        to creator economy drama and the way online life reshapes identity, money, and relationships.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="/topics/">Explore topics</a>
+        <a class="btn secondary" href="/submit/">Submit a pitch</a>
+      </div>
+    </div>
+
+    <aside class="card side" aria-label="Highlights">
+      <div class="mini">
+        <h3>What we publish</h3>
+        <p>Essays • Op-eds • Creator economy • Trend analysis • Platform power • Digital identity</p>
+      </div>
+      <div class="mini">
+        <h3>Our editorial vibe</h3>
+        <p>Edgy-smart, readable, and from-the-inside. Not a recap site — a meaning-making site.</p>
+      </div>
+      <div class="mini">
+        <h3>Want to write?</h3>
+        <p>We love sharp angles, lived experience, and light reporting. Submit below.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section>
+  <div class="section-title">
+    <div>
+      <h3>Latest</h3>
+      <p>Fresh essays (sample posts — edit in the CMS after setup)</p>
+    </div>
+    <div class="navlinks">
+      <span class="tag accent">Internet Culture</span>
+      <span class="tag cyan">Creator Economy</span>
+    </div>
+  </div>
+
+  <div class="grid">
+    {% for post in collections.posts | slice(0,6) %}
+      <article class="card post">
+        <div class="meta">
+          <span class="tag {% if post.data.type == 'Op-ed' %}accent{% endif %}{% if post.data.type == 'Analysis' %}cyan{% endif %}">{{ post.data.type }}</span>
+          <span>•</span>
+          <span>{{ post.data.readingTime }}</span>
+          <span>•</span>
+          <span>{{ post.data.author }}</span>
+          <span>•</span>
+          <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+        </div>
+        <h4><a href="{{ post.url }}">{{ post.data.title }}</a></h4>
+        <p>{{ post.data.excerpt }}</p>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section>
+  <div class="card wide">
+    <div>
+      <h3 style="margin:0 0 8px">The Sunday Signal</h3>
+      <p style="margin:0; color:var(--muted)">One email a week: our best essays + the internet story everyone will be talking about.</p>
+      <div class="hr"></div>
+      <p class="hint" style="margin:0">
+        Newsletter provider hookup: paste your Beehiiv / ConvertKit / Mailchimp embed code into <strong>/newsletter/</strong>.
+      </p>
+      <div class="hero-actions" style="margin-top:12px">
+        <a class="btn" href="/newsletter/">Newsletter setup</a>
+        <a class="btn secondary" href="/submit/">Write for us</a>
+      </div>
+    </div>
+    <div class="mini">
+      <h3>What you’ll get</h3>
+      <p>
+        • 5-minute read list<br>
+        • One sharp op-ed<br>
+        • A trend decoded<br>
+        • Tools + links worth saving
+      </p>
+    </div>
+  </div>
+</section>

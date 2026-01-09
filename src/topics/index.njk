@@ -1,0 +1,24 @@
+---
+layout: layouts/base.njk
+title: Topics
+description: "Browse Signal & Scroll topics: platform power, creator economy, trends, digital identity, money online, and AI culture."
+---
+
+<section>
+  <div class="section-title">
+    <div>
+      <h3>Topics</h3>
+      <p>Pick a lane for readers (and for SEO)</p>
+    </div>
+  </div>
+
+  <div class="grid">
+    {% for t in topics %}
+    <div class="card post" style="grid-column:span 4">
+      <h4 style="font-size:18px"><a href="/topics/{{ t.slug }}/">{{ t.name }}</a></h4>
+      <p>{{ t.desc }}</p>
+      <div class="hint">Explore posts →</div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

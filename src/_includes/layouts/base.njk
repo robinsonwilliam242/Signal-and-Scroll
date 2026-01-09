@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% if title %}{{ title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta name="theme-color" content="#070A0F" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta property="og:title" content="{% if title %}{{ title }} — {% endif %}{{ site.title }}" />
+  <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <div class="row">
+        <a class="brand" href="/" aria-label="{{ site.title }}">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1>{{ site.title }}</h1>
+            <p>{{ site.tagline }}</p>
+          </div>
+        </a>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a href="/" class="{% if page.url == '/' %}active{% endif %}">Latest</a>
+          <a href="/topics/" class="{% if page.url contains '/topics' %}active{% endif %}">Topics</a>
+          <a href="/newsletter/" class="{% if page.url contains '/newsletter' %}active{% endif %}">Newsletter</a>
+          <a href="/submit/" class="{% if page.url contains '/submit' %}active{% endif %}">Submit</a>
+          <a href="/about/" class="{% if page.url contains '/about' %}active{% endif %}">About</a>
+        </nav>
+
+        <div class="navlinks" style="gap:10px">
+          <a class="btn secondary" href="/submit/">Write for us</a>
+          <a class="btn" href="/newsletter/">Get the newsletter</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    {{ content | safe }}
+    <footer class="footer">
+      <div class="card" style="padding:16px">
+        <div class="footergrid">
+          <div>
+            <div class="brand" style="gap:10px; margin-bottom:8px">
+              <div class="logo" style="width:30px;height:30px;border-radius:10px"></div>
+              <div>
+                <h1 style="margin:0;font-size:13px">{{ site.title }}</h1>
+                <p style="margin:0;font-size:12px">{{ site.tagline }}</p>
+              </div>
+            </div>
+            <div class="hint" style="margin-top:0">© {{ \"now\" | date: \"%Y\" }} {{ site.title }}. All rights reserved.</div>
+          </div>
+          <div>
+            <div class="footlinks">
+              <a href="/">Latest</a>
+              <a href="/topics/">Topics</a>
+              <a href="/newsletter/">Newsletter</a>
+              <a href="/submit/">Submit</a>
+              <a href="/about/">About</a>
+            </div>
+            <div class="hint" style="margin-top:10px">Starter build: Eleventy + Decap CMS. Deploy on Netlify.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

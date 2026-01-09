@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+title: AI & Culture
+description: "How generative tools reshape creativity, labor, education, and the definition of \u201creal.\u201d"
+pagination:
+  data: collections.posts
+  size: 1000
+  alias: allPosts
+permalink: "/topics/ai-culture/index.html"
+---
+
+<section>
+  <div class="section-title">
+    <div>
+      <h3>AI & Culture</h3>
+      <p>{{ topicDesc }}</p>
+    </div>
+    <div class="navlinks">
+      <a class="btn secondary" href="/topics/">All topics</a>
+    </div>
+  </div>
+
+  <div class="grid">
+    {% set any = false %}
+    {% for post in collections.posts %}
+      {% if post.data.topic == topicSlug %}
+        {% set any = true %}
+        <article class="card post">
+          <div class="meta">
+            <span class="tag">{{ post.data.type }}</span>
+            <span>•</span>
+            <span>{{ post.data.readingTime }}</span>
+            <span>•</span>
+            <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+          </div>
+          <h4><a href="{{ post.url }}">{{ post.data.title }}</a></h4>
+          <p>{{ post.data.excerpt }}</p>
+        </article>
+      {% endif %}
+    {% endfor %}
+
+    {% if not any %}
+      <div class="card post" style="grid-column:span 12">
+        <h4>No posts yet</h4>
+        <p class="hint">Publish the first one in the CMS under this topic.</p>
+      </div>
+    {% endif %}
+  </div>
+</section>
