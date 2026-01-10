@@ -1,17 +1,17 @@
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
-  eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
-
-  eleventyConfig.addFilter("isoDate", (dateInput) => {
-    if (!dateInput) return "";
-    return new Date(dateInput).toISOString();
+  // Filters
+  eleventyConfig.addFilter("isoDate", (dateObj) => {
+    if (!dateObj) return "";
+    const d = dateObj instanceof Date ? dateObj : new Date(dateObj);
+    return isNaN(d) ? "" : d.toISOString();
   });
 
-  eleventyConfig.addFilter("readableDate", (dateInput) => {
-    if (!dateInput) return "";
-    return DateTime.fromJSDate(new Date(dateInput)).toFormat("LLL dd, yyyy");
+  eleventyConfig.addFilter("readableDate", (dateObj) => {
+    if (!dateObj) return "";
+    return DateTime.fromJSDate(new Date(dateObj), { zone: "utc" })
+      .toFormat("LLL dd, yyyy");
   });
 
   return {
