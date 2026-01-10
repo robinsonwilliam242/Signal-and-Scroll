@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "src",
 
-      // 👇 THIS IS THE KEY LINE
+      // 🔑 THIS IS THE FIX — matches where your layouts actually live
       includes: "layouts",
 
       data: "_data",
