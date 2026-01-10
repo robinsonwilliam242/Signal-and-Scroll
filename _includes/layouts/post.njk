@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+---
+
+<article>
+  <h1>{{ title }}</h1>
+
+  {% if excerpt %}
+    <p><em>{{ excerpt }}</em></p>
+  {% endif %}
+
+  <div>
+    {{ content | safe }}
+  </div>
+</article>
